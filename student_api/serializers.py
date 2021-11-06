@@ -14,8 +14,10 @@ class PathSerializer(serializers.ModelSerializer):
 
 
 class StudentSerializer(serializers.ModelSerializer):
+    path=serializers.StringRelatedField()
+    path_id=serializers.IntegerField()
     class Meta:
         model = Student
-        # fields = ["id", "first_name", "last_name", "number"]
-        fields = '__all__'
+        fields = ["id", "first_name", "last_name", "number", "path", "path_id"]
+        # fields = '__all__'
         # exclude = ['number']
